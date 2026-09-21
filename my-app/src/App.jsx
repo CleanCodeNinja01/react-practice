@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 // const PurpleComponent = () => (
 //   <div style={{color: 'purple'}}>
 //     <p>This component is purple</p>
@@ -21,6 +23,10 @@ const ColorComponent = ({color}) => (
   <p>This component is {color}</p>
 </div>
 )
+
+ColorComponent.propTypes = {
+  color: PropTypes.string.isRequired,
+}
 
 const App = () => {
 
