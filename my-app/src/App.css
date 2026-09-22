@@ -1,0 +1,14 @@
+html {
+    /*Default font size*/
+    font-size: 16px;
+}
+
+.app {
+    margin-top: 4rem;
+}
+
+@media (max-width: 800px) {
+    .app {
+        margin-top: 10rem;
+    }
+}

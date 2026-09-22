@@ -1,0 +1,8 @@
+h1 {
+    font-size: 1.75rem;
+    color: #262637;
+    border-bottom: 0.125rem solid #2CDEB6;
+    display: inline-block;
+    padding: 0.625rem;
+    margin: 0;
+}
