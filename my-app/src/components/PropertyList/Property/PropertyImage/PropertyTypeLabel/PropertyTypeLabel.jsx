@@ -1,5 +1,7 @@
-export const PropertyTypeLabel = () => {
+import "./PropertyTypeLabel.css"
+
+export const PropertyTypeLabel = ({type}) => {
     return (
-        <div></div>
+        <div className="property-type-label">{type}</div>
     )
 }

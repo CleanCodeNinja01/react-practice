@@ -1,10 +1,11 @@
-import { PropertyTypeLabel } from "./PropertyTypeLabel/PropertyTypeLabel"
+import "./PropertyImage.css"
 
-const PropertyImage = ({image}) => {
+const PropertyImage = ({image, children}) => {
 
     return (
-        <div style={{backgroundImage: `url(${image})`}}>
-            <PropertyTypeLabel/>
+        <div className="property-image" 
+        style={{backgroundImage: `url(${image})`}}>
+                {children}
         </div>
     )
 }

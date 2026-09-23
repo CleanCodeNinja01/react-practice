@@ -1,0 +1,9 @@
+.property-list {
+    /*arranging items */
+    display: flex;
+    /*wrap its items on multiple lines if they donot fit on one line*/
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+}
