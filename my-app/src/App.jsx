@@ -4,27 +4,18 @@
 // import { Title } from "./components/Title/Title";
 // import properties from "./data/properties";
 import "./App.css";
-import Button from "./components/Button/Button";
+// import Button from "./components/Button/Button";
+// import Counter from "./components/Counter/Counter";
+import User from "./components/User/User";
 
 const App = () => {
-  const handleClick = ()=>console.log(`hey saleha! be healthy ${0}`)
+  // const handleClick = ()=>console.log(`hey saleha! be healthy ${0}`)
 
   return (
     <div className="app">
-    <Button
-      onButtonClick={handleClick}
-    >
-      Log
-    </Button>
-    {/* <Header/>
-    <main>
-      <Title/>
-      <PropertyList
-        properties={properties}
-      />
-    </main>
-    <Footer/> */}
-  </div>
+      {/* <Counter/> */}
+      <User/>
+    </div>
   )
 }
 
