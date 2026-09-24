@@ -4,9 +4,10 @@
 // import { Title } from "./components/Title/Title";
 // import properties from "./data/properties";
 import "./App.css";
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 // import Button from "./components/Button/Button";
 // import Counter from "./components/Counter/Counter";
-import User from "./components/User/User";
+// import User from "./components/User/User";
 
 const App = () => {
   // const handleClick = ()=>console.log(`hey saleha! be healthy ${0}`)
@@ -14,7 +15,8 @@ const App = () => {
   return (
     <div className="app">
       {/* <Counter/> */}
-      <User/>
+      {/* <User/> */}
+      <ShoppingCart/>
     </div>
   )
 }
