@@ -4,7 +4,8 @@
 // import { Title } from "./components/Title/Title";
 // import properties from "./data/properties";
 import "./App.css";
-import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
+import TodoList from "./components/TodoList/TodoList";
+// import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 // import Button from "./components/Button/Button";
 // import Counter from "./components/Counter/Counter";
 // import User from "./components/User/User";
@@ -16,7 +17,8 @@ const App = () => {
     <div className="app">
       {/* <Counter/> */}
       {/* <User/> */}
-      <ShoppingCart/>
+      {/* <ShoppingCart/> */}
+      <TodoList/>
     </div>
   )
 }
