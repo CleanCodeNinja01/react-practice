@@ -23,13 +23,23 @@ const TodoForm = ({addTodo}) => {
     return (
         <form onSubmit={handleSubmit}>
             <div style={{display: "flex", gap: "1.5rem", alignItems: "center", justifyContent: "center"}}>
-                <input style={{width: "40rem"}} type="text" placeholder="Enter new task" onChange={(e)=>setNewTodo(e.target.value)} value={newTodo}/>
+                <input
+                    style={{width: "40rem"}}
+                    type="text"
+                    placeholder="Enter new task"
+                    onChange={(e)=>setNewTodo(e.target.value)}
+                    onKeyDown={(e) => {
+                        if (e.key !== "Enter") return
+                        e.preventDefault()
+                        handleSubmit(e)
+                    }}
+                    value={newTodo}
+                />
                 <input style={{width: "3rem"}} type="number" min="1" onChange={(e)=>setNewPriority(Number(e.target.value))} value={newPriority}/>
             </div>
             <button
                 type="submit"
                 style={{backgroundColor: "#007bff", margin: "1.5rem", borderRadius: "50%", padding: "0.5rem", border: "none"}}
-                onClick={handleSubmit}
             >
                 <Plus
                     

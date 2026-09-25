@@ -1,21 +1,14 @@
+// import { useState } from "react";
 import "./TodoItem.css"
 import { Pencil, Trash } from 'lucide-react';
 
-const TodoItem = ({task}) => {
-
-    // const editItem = (item) => {
-
-    // }
-
-    // const deleteItem = (item) => {
-        
-    // }
+const TodoItem = ({todo, toggleTodoDone, deleteTodo, setEditingTodoId}) => {
 
     return (
         <div style={{margin: "0 auto", textAlign: "left", width: "51rem", display: "flex", alignItems: "center", flexGrow: 1, gap: "4px"}}>
-            <input type="checkbox" checked={task.done} />
-            <span style={{textDecoration: task.done ? "line-through": "none", display: "flex", alignItems: "center", flexGrow: 1, gap: "1rem",}}>
-                {task.title}
+            <input type="checkbox" checked={todo.done} onChange={()=>toggleTodoDone(todo.id)} />
+            <span style={{textDecoration: todo.done ? "line-through": "none", display: "flex", alignItems: "center", flexGrow: 1, gap: "1rem",}}>
+                {todo.title}
             </span> 
             <span
                 style={{
@@ -29,11 +22,13 @@ const TodoItem = ({task}) => {
                     display: "inline-block",
                 }}
             >
-                {task.priority}
+                {todo.priority}
             </span>
             <span>
-                <Pencil onClick={()=>{}} style={{backgroundColor: "yellow", borderRadius: "30%", marginLeft: "4px", padding: "4px"}}/>
-                <Trash onClick={()=>{}} style={{backgroundColor: "red", borderRadius: "30%", marginLeft: "4px", border: "none", padding: "4px"}}/>
+                <button onClick={()=>setEditingTodoId(todo.id)}>
+                    <Pencil onClick={()=>{}} style={{backgroundColor: "yellow", borderRadius: "30%", marginLeft: "4px", padding: "4px"}}/>
+                </button>
+                <Trash onClick={()=>{deleteTodo(todo.id)}} style={{backgroundColor: "red", borderRadius: "30%", marginLeft: "4px", border: "none", padding: "4px"}}/>
             </span>
         </div>
     )
