@@ -4,7 +4,12 @@
 // import { Title } from "./components/Title/Title";
 // import properties from "./data/properties";
 import "./App.css";
-import Timer from "./components/Timer/Timer";
+import CounterUseRef from "./components/CounterUseRef";
+// import FruitsList from "./components/FruitsList";
+// import UseRefTest from "./components/UseRefTest";
+// import MyForm from "./components/MyForm/MyForm";
+// import Timer from "./components/Timer/Timer";
+// import UseRefTest from "./components/UseRefTest";
 // import TodoList from "./components/TodoList/TodoList";
 // import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 // import Button from "./components/Button/Button";
@@ -20,7 +25,11 @@ const App = () => {
       {/* <User/> */}
       {/* <ShoppingCart/> */}
         {/* <TodoList/> */}
-        <Timer/>
+        {/* <Timer/> */}
+        {/* <UseRefTest/> */}
+      {/* <MyForm/> */}
+      {/* <FruitsList/> */}
+        <CounterUseRef/>
     </div>
   )
 }
