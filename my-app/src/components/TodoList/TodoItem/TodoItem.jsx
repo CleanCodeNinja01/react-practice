@@ -1,15 +1,17 @@
 // import { useState } from "react";
 import "./TodoItem.css"
 import { Pencil, Trash } from 'lucide-react';
+import { useTaskActions } from "../../../contexts/TaskContext";
 
-const TodoItem = ({todo, toggleTodoDone, deleteTodo, setEditingTodoId}) => {
+const TodoItem = ({todo, setEditingTodoId}) => {
 
+    const {toggleTodoDone, deleteTodo} = useTaskActions();
     return (
         <div style={{margin: "0 auto", textAlign: "left", width: "51rem", display: "flex", alignItems: "center", flexGrow: 1, gap: "4px"}}>
             <input type="checkbox" checked={todo.done} onChange={()=>toggleTodoDone(todo.id)} />
             <span style={{textDecoration: todo.done ? "line-through": "none", display: "flex", alignItems: "center", flexGrow: 1, gap: "1rem",}}>
                 {todo.title}
-            </span> 
+        </span> 
             <span
                 style={{
                     backgroundColor: "#6f42c1",

@@ -4,7 +4,8 @@
 // import { Title } from "./components/Title/Title";
 // import properties from "./data/properties";
 import "./App.css";
-import TodoList from "./components/TodoList/TodoList";
+import Timer from "./components/Timer/Timer";
+// import TodoList from "./components/TodoList/TodoList";
 // import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 // import Button from "./components/Button/Button";
 // import Counter from "./components/Counter/Counter";
@@ -18,7 +19,8 @@ const App = () => {
       {/* <Counter/> */}
       {/* <User/> */}
       {/* <ShoppingCart/> */}
-      <TodoList/>
+        {/* <TodoList/> */}
+        <Timer/>
     </div>
   )
 }

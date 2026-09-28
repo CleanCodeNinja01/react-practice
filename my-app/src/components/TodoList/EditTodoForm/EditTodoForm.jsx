@@ -1,10 +1,12 @@
 import { Check } from "lucide-react";
 import "./EditTodoForm.css"
 import { useState } from "react";
+import { useTaskActions } from "../../../contexts/TaskContext";
 
-const EditTodoForm = ({editTodo, setEditingTodoId, updateTodo}) => {
+const EditTodoForm = ({editTodo, setEditingTodoId}) => {
     const [editTodoTitle, setEditTodoTitle] = useState(editTodo.title)
     const [editTodoPri, setEditTodoPri] = useState(editTodo.priority)
+    const {updateTodo} = useTaskActions();
 
     const saveEdit = () => {
         if (editTodoTitle.trim()){
