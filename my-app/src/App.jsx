@@ -4,8 +4,9 @@
 // import { Title } from "./components/Title/Title";
 // import properties from "./data/properties";
 import "./App.css";
+import Rating from "./components/Rating/Rating";
 // import DataFetcherExamples from "./components/DataFetcher/DataFetcherExamples";
-import ButtonToolTip from "./components/Prop-getters-props-colls/ButtonToolTip";
+// import ButtonToolTip from "./components/Prop-getters-props-colls/ButtonToolTip";
 // import Goodbye from "./components/HOC practice/Goodbye";
 // import Hello from "./components/HOC practice/Hello";
 // import WithLogger from "./components/HOC practice/WithLogger";
@@ -42,8 +43,17 @@ const App = () => {
       <HelloWithLogger name="Alice" />
       <GoodbyeWithLogger name="Alice" /> */}
       {/* <DataFetcherExamples/> */}
-      <ButtonToolTip/>
-
+      {/* <ButtonToolTip/> */}
+      <h1>Controlled props pattern - rating</h1>
+      <h3>Uncontrolled rating with defaultVal: 3</h3>
+      <Rating
+        defaultVal={3}
+        onChange={(val)=> console.log("Uncontrolled ->", val)}
+      />
+      <Rating
+        value={3}
+        // onChange={(val)=> console.log("Uncontrolled ->", val)}
+      />
     </>
   );
 }
