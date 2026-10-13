@@ -8,6 +8,7 @@ import "./App.css";
 import Rating from "./components/Rating/Rating";
 import WelcomeMessage from "./components/WelcomeMessage";
 import MemoizedFunctionsParent from "./components/MemoizedFunctions/MemoizedFunctionsParent";
+import VirtualizedList from "./components/VirtualizedList/VirtualizedList";
 // import DataFetcherExamples from "./components/DataFetcher/DataFetcherExamples";
 // import ButtonToolTip from "./components/Prop-getters-props-colls/ButtonToolTip";
 // import Goodbye from "./components/HOC practice/Goodbye";
@@ -76,7 +77,8 @@ const App = () => {
         </label>
       </div> */}
 
-      <MemoizedFunctionsParent/>
+      {/* <MemoizedFunctionsParent/> */}
+      <VirtualizedList/>
 
     </>
   );

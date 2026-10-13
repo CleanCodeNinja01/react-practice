@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "lucide-react": "^1.47.0"
+    "lucide-react": "^1.47.0",
+    "react-virtualized": "^9.22.6"
   }
 }
