@@ -3,8 +3,10 @@
 // import PropertyList from "./components/PropertyList/PropertyList";
 // import { Title } from "./components/Title/Title";
 // import properties from "./data/properties";
+import { useState } from "react";
 import "./App.css";
 import Rating from "./components/Rating/Rating";
+import WelcomeMessage from "./components/WelcomeMessage";
 // import DataFetcherExamples from "./components/DataFetcher/DataFetcherExamples";
 // import ButtonToolTip from "./components/Prop-getters-props-colls/ButtonToolTip";
 // import Goodbye from "./components/HOC practice/Goodbye";
@@ -35,7 +37,8 @@ import Rating from "./components/Rating/Rating";
 const App = () => {
   // const handleClick = ()=>console.log(`hey saleha! be healthy ${0}`)
 
-
+  const [user, setUser] = useState("");
+  const [location, setLocation] = useState("")
 
   return (
     <>
@@ -44,7 +47,7 @@ const App = () => {
       <GoodbyeWithLogger name="Alice" /> */}
       {/* <DataFetcherExamples/> */}
       {/* <ButtonToolTip/> */}
-      <h1>Controlled props pattern - rating</h1>
+      {/* <h1>Controlled props pattern - rating</h1>
       <h3>Uncontrolled rating with defaultVal: 3</h3>
       <Rating
         defaultVal={3}
@@ -53,7 +56,25 @@ const App = () => {
       <Rating
         value={3}
         // onChange={(val)=> console.log("Uncontrolled ->", val)}
-      />
+      /> */}
+
+
+      <h1>React performance!</h1>
+
+      <WelcomeMessage/>
+
+      <div>
+        <label htmlFor="">
+          User name: {' '}
+          <input type="text" 
+            value={user}
+            onChange={(e)=>setUser(e.target.value)}
+            placeholder="Enter your name"
+          />
+
+        </label>
+      </div>
+
     </>
   );
 }
