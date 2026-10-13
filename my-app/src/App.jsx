@@ -7,6 +7,7 @@ import { useState } from "react";
 import "./App.css";
 import Rating from "./components/Rating/Rating";
 import WelcomeMessage from "./components/WelcomeMessage";
+import MemoizedFunctionsParent from "./components/MemoizedFunctions/MemoizedFunctionsParent";
 // import DataFetcherExamples from "./components/DataFetcher/DataFetcherExamples";
 // import ButtonToolTip from "./components/Prop-getters-props-colls/ButtonToolTip";
 // import Goodbye from "./components/HOC practice/Goodbye";
@@ -61,7 +62,7 @@ const App = () => {
 
       <h1>React performance!</h1>
 
-      <WelcomeMessage/>
+      {/* <WelcomeMessage/>
 
       <div>
         <label htmlFor="">
@@ -73,7 +74,9 @@ const App = () => {
           />
 
         </label>
-      </div>
+      </div> */}
+
+      <MemoizedFunctionsParent/>
 
     </>
   );
