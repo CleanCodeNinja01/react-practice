@@ -3,12 +3,13 @@
 // import PropertyList from "./components/PropertyList/PropertyList";
 // import { Title } from "./components/Title/Title";
 // import properties from "./data/properties";
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import "./App.css";
 import Rating from "./components/Rating/Rating";
 import WelcomeMessage from "./components/WelcomeMessage";
 import MemoizedFunctionsParent from "./components/MemoizedFunctions/MemoizedFunctionsParent";
 import VirtualizedList from "./components/VirtualizedList/VirtualizedList";
+const HeavyComponent = lazy(()=> import ("./components/HeavyComponent/HeavyComponent"));
 // import DataFetcherExamples from "./components/DataFetcher/DataFetcherExamples";
 // import ButtonToolTip from "./components/Prop-getters-props-colls/ButtonToolTip";
 // import Goodbye from "./components/HOC practice/Goodbye";
@@ -61,7 +62,7 @@ const App = () => {
       /> */}
 
 
-      <h1>React performance!</h1>
+      {/* <h1>React performance!</h1> */}
 
       {/* <WelcomeMessage/>
 
@@ -78,7 +79,10 @@ const App = () => {
       </div> */}
 
       {/* <MemoizedFunctionsParent/> */}
-      <VirtualizedList/>
+      {/* <VirtualizedList/> */}
+      <Suspense fallback={<div>Loading component...</div>}>
+        <HeavyComponent/>
+      </Suspense>
 
     </>
   );
