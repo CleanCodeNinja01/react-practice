@@ -37,11 +37,20 @@ const HeavyComponent = lazy(()=> import ("./components/HeavyComponent/HeavyCompo
 // const HelloWithLogger = WithLogger(Hello);
 // const GoodbyeWithLogger = WithLogger(Goodbye);
 
+import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+
+const Home = () => <h2>Home</h2>
+const About = () => <h2>About</h2>
+const Contact = () => <h2>Contact</h2>
+const Services = () => <h2>Services</h2>
+
 const App = () => {
   // const handleClick = ()=>console.log(`hey saleha! be healthy ${0}`)
 
   const [user, setUser] = useState("");
   const [location, setLocation] = useState("")
+
+  const navLinkStyle = {};
 
   return (
     <>
@@ -61,7 +70,6 @@ const App = () => {
         // onChange={(val)=> console.log("Uncontrolled ->", val)}
       /> */}
 
-
       {/* <h1>React performance!</h1> */}
 
       {/* <WelcomeMessage/>
@@ -80,10 +88,32 @@ const App = () => {
 
       {/* <MemoizedFunctionsParent/> */}
       {/* <VirtualizedList/> */}
-      <Suspense fallback={<div>Loading component...</div>}>
+      {/* <Suspense fallback={<div>Loading component...</div>}>
         <HeavyComponent/>
-      </Suspense>
-
+      </Suspense> */}
+      <BrowserRouter>
+        <h1>React router demo!</h1>
+        <nav>
+          <NavLink to="/" style={navLinkStyle}>
+            Home
+          </NavLink>
+          <NavLink to="/about" style={navLinkStyle}>
+            About
+          </NavLink>
+          <NavLink to="/contact" style={navLinkStyle}>
+            Contact
+          </NavLink>
+          <NavLink to="/services" style={navLinkStyle}>
+            Services
+          </NavLink>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Services />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
