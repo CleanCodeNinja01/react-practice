@@ -38,11 +38,13 @@ const HeavyComponent = lazy(()=> import ("./components/HeavyComponent/HeavyCompo
 // const GoodbyeWithLogger = WithLogger(Goodbye);
 
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import Products from "./components/Products/Products";
 
 const Home = () => <h2>Home</h2>
 const About = () => <h2>About</h2>
 const Contact = () => <h2>Contact</h2>
 const Services = () => <h2>Services</h2>
+const NotFound = () => <h2>Not found!</h2>
 
 const App = () => {
   // const handleClick = ()=>console.log(`hey saleha! be healthy ${0}`)
@@ -91,7 +93,7 @@ const App = () => {
       {/* <Suspense fallback={<div>Loading component...</div>}>
         <HeavyComponent/>
       </Suspense> */}
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <h1>React router demo!</h1>
         <nav>
           <NavLink to="/" style={navLinkStyle}>
@@ -112,7 +114,11 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
+      </BrowserRouter> */}
+      <BrowserRouter>
+        <Products/>
       </BrowserRouter>
     </>
   );
