@@ -39,6 +39,7 @@ const HeavyComponent = lazy(()=> import ("./components/HeavyComponent/HeavyCompo
 
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import Products from "./components/Products/Products";
+import Courses from "./components/Courses/Courses";
 
 const Home = () => <h2>Home</h2>
 const About = () => <h2>About</h2>
@@ -117,9 +118,10 @@ const App = () => {
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter> */}
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Products/>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <Courses/>
     </>
   );
 }
