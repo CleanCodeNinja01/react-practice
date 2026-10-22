@@ -36,12 +36,14 @@ const Courses = () => {
 
     // react query is going to manage the loading and error states
 
-    const {data, isLoading, isError, error} = useQuery({
+    // refetch bypasses the stale config
+    const {data, isLoading, isError, error, refetch} = useQuery({
         // queryKey is the unique id for this piece of data
         queryKey: ["courses"],
         queryFn: fetchCourses,
         staleTime: 1000*60, // 1 minute - consider data fresh
-        cacheTime: 1000*60*10 // 10 mins in cache
+        cacheTime: 1000*60*10, // 10 mins in cache
+        refetchOnWindowFocus: true, // when this is enabled RQ will automatically refetch data
     });
 
     if (isLoading) return <p>Loading courses ...</p>
@@ -52,6 +54,7 @@ const Courses = () => {
     return (
         <div>
             <h2>Available Courses</h2>
+            <button onClick={()=>refetch()}>🔄 Refresh courses</button>
             <ul>
                 {courses.map((course) => (
                     <li key={course.id}>
