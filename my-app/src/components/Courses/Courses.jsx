@@ -40,6 +40,8 @@ const Courses = () => {
         // queryKey is the unique id for this piece of data
         queryKey: ["courses"],
         queryFn: fetchCourses,
+        staleTime: 1000*60, // 1 minute - consider data fresh
+        cacheTime: 1000*60*10 // 10 mins in cache
     });
 
     if (isLoading) return <p>Loading courses ...</p>

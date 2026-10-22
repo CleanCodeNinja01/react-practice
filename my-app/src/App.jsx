@@ -37,11 +37,16 @@ const HeavyComponent = lazy(()=> import ("./components/HeavyComponent/HeavyCompo
 // const HelloWithLogger = WithLogger(Hello);
 // const GoodbyeWithLogger = WithLogger(Goodbye);
 
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, NavLink, Route, Routes } from "react-router-dom";
 import Products from "./components/Products/Products";
 import Courses from "./components/Courses/Courses";
 
-const Home = () => <h2>Home</h2>
+const Home = () => 
+  <div>
+    <h2>🏠 Home</h2>
+    <p>Welcome to the react query demo!</p>
+  </div>
+
 const About = () => <h2>About</h2>
 const Contact = () => <h2>Contact</h2>
 const Services = () => <h2>Services</h2>
@@ -55,73 +60,32 @@ const App = () => {
 
   const navLinkStyle = {};
 
+  const content = (
+    <div style={{padding: "2rem"}}>
+      <h1>udemy courses</h1>
+      <p>data fetched from the api: </p>
+      <Courses/> 
+   </div>
+  )
+
   return (
     <>
-      {/* <h1>Higher Order Components (HOC)</h1>
-      <HelloWithLogger name="Alice" />
-      <GoodbyeWithLogger name="Alice" /> */}
-      {/* <DataFetcherExamples/> */}
-      {/* <ButtonToolTip/> */}
-      {/* <h1>Controlled props pattern - rating</h1>
-      <h3>Uncontrolled rating with defaultVal: 3</h3>
-      <Rating
-        defaultVal={3}
-        onChange={(val)=> console.log("Uncontrolled ->", val)}
-      />
-      <Rating
-        value={3}
-        // onChange={(val)=> console.log("Uncontrolled ->", val)}
-      /> */}
-
-      {/* <h1>React performance!</h1> */}
-
-      {/* <WelcomeMessage/>
-
-      <div>
-        <label htmlFor="">
-          User name: {' '}
-          <input type="text" 
-            value={user}
-            onChange={(e)=>setUser(e.target.value)}
-            placeholder="Enter your name"
-          />
-
-        </label>
-      </div> */}
-
-      {/* <MemoizedFunctionsParent/> */}
-      {/* <VirtualizedList/> */}
-      {/* <Suspense fallback={<div>Loading component...</div>}>
-        <HeavyComponent/>
-      </Suspense> */}
-      {/* <BrowserRouter>
-        <h1>React router demo!</h1>
-        <nav>
-          <NavLink to="/" style={navLinkStyle}>
-            Home
-          </NavLink>
-          <NavLink to="/about" style={navLinkStyle}>
-            About
-          </NavLink>
-          <NavLink to="/contact" style={navLinkStyle}>
-            Contact
-          </NavLink>
-          <NavLink to="/services" style={navLinkStyle}>
-            Services
-          </NavLink>
+      <BrowserRouter>
+        <nav style={{padding: "1rem", borderBottom: "1px solid #ccc"}}>
+          <Link to="/" style={{marginRight: "1rem"}}> Home</Link>
+          <Link to="/courses">Courses</Link>
         </nav>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="*" element={<NotFound/>}/>
+          <Route
+            path="/"
+            element={<Home/>}
+          />
+          <Route
+            path="/courses"
+            element={content}
+          />
         </Routes>
-      </BrowserRouter> */}
-      {/* <BrowserRouter>
-        <Products/>
-      </BrowserRouter> */}
-      <Courses/>
+      </BrowserRouter>
     </>
   );
 }
