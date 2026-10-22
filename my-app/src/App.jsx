@@ -42,6 +42,8 @@ import Products from "./components/Products/Products";
 import Courses from "./components/Courses/Courses";
 import Display from "./components/Display/Display";
 import CounterZ from "./components/CounterZ/CounterZ";
+import DisplayRTK from "./components/DisplayRTK/DisplayRTK";
+import CounterRTK from "./components/CounterRTK/CounterRTK.jsx";
 
 const Home = () => 
   <div>
@@ -88,10 +90,15 @@ const App = () => {
           />
         </Routes>
       </BrowserRouter> */}
-      <div>
+      {/* <div>
         <h1>Zustand global state!</h1>
         <CounterZ/>
         <Display/>
+      </div> */}
+      <div>
+        <h1>RTK global state!</h1>
+        <CounterRTK/>
+        <DisplayRTK/>
       </div>
     </>
   );
