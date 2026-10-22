@@ -40,6 +40,8 @@ const HeavyComponent = lazy(()=> import ("./components/HeavyComponent/HeavyCompo
 import { BrowserRouter, Link, NavLink, Route, Routes } from "react-router-dom";
 import Products from "./components/Products/Products";
 import Courses from "./components/Courses/Courses";
+import Display from "./components/Display/Display";
+import CounterZ from "./components/CounterZ/CounterZ";
 
 const Home = () => 
   <div>
@@ -70,7 +72,7 @@ const App = () => {
 
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <nav style={{padding: "1rem", borderBottom: "1px solid #ccc"}}>
           <Link to="/" style={{marginRight: "1rem"}}> Home</Link>
           <Link to="/courses">Courses</Link>
@@ -85,7 +87,12 @@ const App = () => {
             element={content}
           />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <div>
+        <h1>Zustand global state!</h1>
+        <CounterZ/>
+        <Display/>
+      </div>
     </>
   );
 }
