@@ -44,6 +44,8 @@ import Display from "./components/Display/Display";
 import CounterZ from "./components/CounterZ/CounterZ";
 import DisplayRTK from "./components/DisplayRTK/DisplayRTK";
 import CounterRTK from "./components/CounterRTK/CounterRTK.jsx";
+import BuggyComponent from "./components/BuggyComponent/BuggyComponent.jsx";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary.jsx";
 
 const Home = () => 
   <div>
@@ -96,9 +98,12 @@ const App = () => {
         <Display/>
       </div> */}
       <div>
-        <h1>RTK global state!</h1>
+        {/* <h1>RTK global state!</h1>
         <CounterRTK/>
-        <DisplayRTK/>
+        <DisplayRTK/> */}
+        <ErrorBoundary>
+          <BuggyComponent/>
+        </ErrorBoundary>
       </div>
     </>
   );
