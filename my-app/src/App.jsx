@@ -45,7 +45,9 @@ import CounterZ from "./components/CounterZ/CounterZ";
 import DisplayRTK from "./components/DisplayRTK/DisplayRTK";
 import CounterRTK from "./components/CounterRTK/CounterRTK.jsx";
 import BuggyComponent from "./components/BuggyComponent/BuggyComponent.jsx";
-import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary.jsx";
+import {ErrorBoundary} from "react-error-boundary"
+import BuggyCounter from "./components/BuggyCounter/BuggyCounter.jsx";
+import ErrorFallback from "./components/ErrorFallback/ErrorFallback.jsx";
 
 const Home = () => 
   <div>
@@ -101,9 +103,21 @@ const App = () => {
         {/* <h1>RTK global state!</h1>
         <CounterRTK/>
         <DisplayRTK/> */}
-        <ErrorBoundary>
+        {/* <ErrorBoundary>
           <BuggyComponent/>
+        </ErrorBoundary> */}
+
+        <h1>🛡️ Error Boundaries in React</h1>
+        <p>click the button to increment this counter. At <strong>5</strong>, it will crash but notice
+          how this part fails while the rest of the app still works!
+        </p>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <BuggyCounter/>
+
         </ErrorBoundary>
+
+        <hr />
+        <p>✅ This part of the app is still live!</p>
       </div>
     </>
   );

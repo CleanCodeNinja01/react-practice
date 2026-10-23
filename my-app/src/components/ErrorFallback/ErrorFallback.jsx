@@ -1,0 +1,13 @@
+// user friendly error message when something goes wrong
+
+const ErrorFallback = ({error, resetErrorBoundary}) => {
+    return (
+        <div role="alert" style={{color: "red"}}>
+            <p>⚠️ Something went wrong!</p>
+            <pre>{error.message}</pre>
+            <button onClick={resetErrorBoundary}>🔄 Try again!</button>
+        </div>
+    )
+}
+
+export default ErrorFallback;
