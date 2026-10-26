@@ -8,3 +8,11 @@ test("button is disabled when prop is true", ()=>{
 
     expect(btn).toBeDisabled()
 })
+
+test("button is enabled when prop is false", ()=>{
+    render(<SubmitButton disabled={false}/>)
+
+    const btn = screen.getByRole("button", {name: /submit/i})
+
+    expect(btn).toBeEnabled()
+})
