@@ -111,7 +111,7 @@ const App = () => {
         <p>click the button to increment this counter. At <strong>5</strong>, it will crash but notice
           how this part fails while the rest of the app still works!
         </p>
-        <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <ErrorBoundary FallbackComponent={ErrorFallback} onReset={()=>{console.log("Error boundary reset!")}}>
           <BuggyCounter/>
 
         </ErrorBoundary>
